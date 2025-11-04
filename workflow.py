@@ -1,10 +1,10 @@
 from agents import create_web_researcher, create_local_researcher, create_analyst, create_writer
-from local_tools import can_use_local_sources, gather_local_summaries
-from bibliography import bibliography_tracker
+from utils.local_rag_utils import can_use_local_sources, gather_local_summaries
+from utils.bibliography_utils import bibliography_tracker
 
 def run_research_workflow(user_input):
     """
-    Run a four step workflow for research and fact-checking with web and file sources.
+    Run a five-agent workflow for research and fact-checking with web and file sources.
     Shows progress logs during execution but presents only the final report to the user.
     
     Args:

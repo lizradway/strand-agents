@@ -32,11 +32,11 @@ from strands import Agent
 from strands_tools import http_request
 
 BIB_FILE = Path("bibliography.log") # Bibliography output file
-LOCAL_SOURCES_DIR = Path("./sources") # Local sources input file
+LOCAL_SOURCES_DIR = Path("./sources") # Local sources input directory
 
 def run_research_workflow(user_input):
     """
-    Run a four-agent workflow for research and fact-checking with web and file sources.
+    Run a five-agent workflow for research and fact-checking with web and file sources.
     Shows progress logs during execution but presents only the final report to the user.
     
     Args:
@@ -64,7 +64,7 @@ def run_research_workflow(user_input):
     
     researcher_response = researcher_agent(
         f"Research: '{user_input}'. Use your available tools to gather information from reliable sources. "
-        f"Focus on being concise and thorough, but limit web requests to 1-2 sources.",
+        "Focus on being concise and thorough, but limit web requests to 1-2 sources.",
     )
     
     # Extract only the relevant content from the researcher response
@@ -89,9 +89,9 @@ def run_research_workflow(user_input):
     if local_summaries:
         researcher_agent = Agent(
             system_prompt=(
-                "You are a Researcher Agent that gathers information from local sources."
+                "You are a Researcher Agent that gathers information from local sources. "
                 "1. Determine if the input is a research query or factual claim "
-                "2. Use the local sources below to find relevant information"
+                "2. Use the local sources below to find relevant information "
                 "3. Include source file paths in output and keep findings under 500 words"),
             callback_handler=bibliography_tracker
         )
@@ -156,7 +156,11 @@ def run_research_workflow(user_input):
 
 def bibliography_tracker(**kwargs):
     """
-    Callback function to track http_request URLs and write them to a log file.
+    Callback function to track references and write them to a bibliography file
+    
+    Args: Argument reference
+        
+    Returns: None
     """
     # Track assistant tool usage messages
     if "message" in kwargs:
@@ -199,7 +203,7 @@ def can_use_local_sources():
 
 def gather_local_summaries(max_chunk_size=2000):
     """
-    Use LLM to summarize local files before passing them to the workflow
+    Summarize local files with LLM before passing them to the workflow
     
     Args: None
         

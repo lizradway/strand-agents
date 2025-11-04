@@ -112,6 +112,6 @@ Type `exit` to quit the program.
 
 ## Next Steps
 
-1. Integration of Bedrock Knowledge Base: Allows for shared and use-case specific knowledge access
-2. Source Restriction: Restrict HTTP access to sources for specific use cases (ie. JSTOR for academic research)
-3. User Interaction: Allow user to engage further and iterate on research questions
+1. **Integration of Bedrock Knowledge Base**: Allows for shared and use-case specific knowledge access
+2. **Source Restriction**: Restrict HTTP access to sources for specific use cases (ie. JSTOR for academic research)
+3. **User Interaction**: Allow user to engage further and iterate on research questions

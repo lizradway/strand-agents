@@ -60,3 +60,12 @@ No oncologist or cancer treatment center recognizes lemons as a legitimate cance
 Analysis based on PubMed database research (1,111 studies) and established oncological guidelines.
 
 **Bottom Line**: While lemons are nutritious and may offer modest preventive benefits, claims of cancer-curing properties are scientifically unfounded and potentially dangerous.Report creation complete
+
+
+# Bibliogaphy Output
+See output file in bibliography.log
+```
+File: lemons.txt
+URL: https://www.cancer.gov/about-cancer/causes-prevention/risk/diet/antioxidants-fact-sheet
+URL: https://pubmed.ncbi.nlm.nih.gov/?term=lemon+citrus+cancer+treatmentURL
+```

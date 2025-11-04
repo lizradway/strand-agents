@@ -1,6 +1,6 @@
 # Agentic Workflow: Research Assistant
 
-This project demonstrates an **agentic workflow** for research and fact-checking using **Strands agents**, combining both **web research** and **local file retrieval**. It leverages multiple specialized agents that collaborate sequentially to gather, verify, and summarize information. This implementation is built on top of the[multi-agent workflow example used in the Strand SDK Documentation](https://github.com/strands-agents/docs/blob/main/docs/examples/python/agents_workflows.md).
+This project demonstrates an **agentic workflow** for research and fact-checking using **Strands agents**, combining both **web research** and **local file retrieval**. It leverages multiple specialized agents that collaborate sequentially to gather, verify, and summarize information. This implementation is built on top of the [multi-agent workflow example used in the Strand SDK Documentation](https://github.com/strands-agents/docs/blob/main/docs/examples/python/agents_workflows.md).
 
 ---
 
@@ -38,6 +38,10 @@ cd <project-directory>
 ```
 .
 ├── research_assistant.py   # Main workflow script
+├── workflow.py             # Invokes agentic workflows
+├── agents.py               # Intialized agents with system prompt
+├── local_tools.py          # Local file search functionality
+├── bibliography.py         # Bibliography functionality
 ├── sources/                # Local text sources for RAG
 ├── bibliography.log        # Generated bibliography of URLs and files
 └── README.md
